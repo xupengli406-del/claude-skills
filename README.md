@@ -76,6 +76,54 @@ resume-builder/
 
 ---
 
+### /prd-builder — Demo 代码库 → 研发可执行 PRD
+
+**用途**：把任意 demo / 原型 / 黑客松项目代码库，反向生成符合"研发可执行"标准的飞书 PRD。
+
+**核心资产**：
+
+- 9 章固定骨架（版本 / 变更日志 / 文档说明 / 需求背景 / 需求范围 / 功能详细 / 系统架构 / 用户旅程 / 非功能 / 埋点 / 项目规划）
+- 功能点 grid 模板（左 40% 文字、右 60% 截图、下方规则区，所有功能点统一格式）
+- 系统流程 ASCII 图规范（不用 mermaid，飞书/GitHub 三端兼容）
+- 变更日志 + 红字增量标注规则（每个小版本独立 lark-table，红字标注新增/修改）
+- 代码库反向挖掘启发式（路由 → 模块 / Modal → 功能点 / store → 业务实体 / 常量 → 计费数据）
+
+**五阶段工作流**：
+
+1. **Mine** — `node scripts/scan_codebase.mjs <repo>` 扫出模块×功能点清单
+2. **Outline** — 填 9 章骨架，模块总览签字确认
+3. **Detail** — 每个功能点按 grid 模板逐个写
+4. **System** — 画 ASCII 系统架构 + 4 条核心流程 + 3 条用户旅程
+5. **Polish** — 变更日志 / 红字标注 / 飞书粘贴预检
+
+**调用**：
+
+- 全新 PRD：`帮我把 D:/work/my-demo 这个项目沉淀成 PRD`
+- 增量更新：`在 v1.3 PRD 基础上加一个新模块的功能点，做 v1.4`
+- 单点补全：`这个 Modal 还没写进 PRD，按现有风格补上`
+
+**目录结构**：
+
+```
+prd-builder/
+├── SKILL.md                    主入口（5 阶段工作流 + 触发词 + 反模式）
+├── doc-architecture.md         9 大章节固定骨架
+├── feature-point-template.md   功能点写作规范
+├── system-flow-template.md     ASCII 流程图 + 节点矩阵规范
+├── changelog-convention.md     变更日志 + 红字增量标注规则
+├── codebase-mining.md          代码库反向挖掘方法
+├── templates/
+│   ├── prd.md                  完整 9 章占位符模板
+│   └── feature-point.md        单个功能点片段
+└── scripts/
+    ├── scan_codebase.mjs       零依赖代码库扫描器
+    └── README.md
+```
+
+**来源**：2026 年 4 月，从「短剧产品 v1_PRD_研发可执行文档」（已被研发认可）中提炼骨架与规则。
+
+---
+
 ## 仓库可见性
 
 私有仓库。如果未来沉淀更通用、不含个人数据的 skill，可单独抽出公开。
