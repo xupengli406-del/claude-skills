@@ -1,6 +1,6 @@
 ---
-name: biz-judge
-description: 结构性商业判断框架。用于评估一个新项目、新产品或新业务机会的商业可行性。通过5层漏斗验证法（市场结构→客户分层→价值链卡位→商业模型→时机节奏）逐层分析，任何一层不通过即判定不可行。
+name: biz-judge-tob
+description: ToB结构性商业判断框架。用于评估一个新项目、新产品或新业务机会的商业可行性。通过5层漏斗验证法（市场结构→客户分层→价值链卡位→商业模型→时机节奏）逐层分析，任何一层不通过即判定不可行。
 argument-hint: "[项目名称或简述]"
 disable-model-invocation: true
 user-invocable: true
