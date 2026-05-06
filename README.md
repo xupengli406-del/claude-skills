@@ -185,3 +185,35 @@ prd-builder/
 ## 仓库可见性
 
 私有仓库。如果未来沉淀更通用、不含个人数据的 skill，可单独抽出公开。
+
+---
+
+### /video-editor — 视频剪辑工作流
+
+**用途**：从多段原始素材中剪辑出流畅视频并配字幕。自动安装 FFmpeg + Whisper，转录语音，分析内容，去除气口/口误/重复，按指定时长要求剪辑拼接，生成并烧录字幕。
+
+**方法论**：六步流水线
+
+1. **环境检查** — FFmpeg / Whisper 是否可用，未装则自动安装
+2. **素材扫描** — 获取所有视频文件的分辨率、时长、横竖屏信息
+3. **语音转录** — Whisper small 模型中文转录，带 word timestamps
+4. **内容分析** — 匹配脚本台词、标记气口/口误/重复、确定剪辑方案
+5. **剪辑拼接** — FFmpeg 裁剪 + 拼接，支持横竖屏混合（pillarbox）
+6. **字幕生成与烧录** — SRT 字幕生成（含 ASR 纠错）+ 硬字幕烧录
+
+**调用**：`/video-editor D:\素材目录 3分钟以内 大家好我们是xxx团队...`
+
+**目录结构**：
+
+```
+video-editor/
+├── SKILL.md              主入口（6 步工作流 + 触发词）
+└── scripts/
+    ├── README.md         脚本使用说明
+    ├── transcribe.py     Whisper 转录模板
+    ├── edit_video.py     FFmpeg 剪辑拼接模板
+    ├── generate_srt.py   SRT 字幕生成（含 ASR 纠错）
+    └── burn_subtitles.py 字幕烧录模板
+```
+
+**来源**：2026 年 5 月，南客松 S2 黑客松 RideSafe 团队 demo 视频剪辑中提炼。
