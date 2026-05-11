@@ -217,3 +217,32 @@ video-editor/
 ```
 
 **来源**：2026 年 5 月，南客松 S2 黑客松 RideSafe 团队 demo 视频剪辑中提炼。
+
+---
+
+### /video-presenter — 讲解视频生成器
+
+**用途**：将结构化内容大纲（产品介绍、框架说明、教程等）自动转化为带动画和中文字幕的深色风格讲解视频。无需打开剪辑软件，一条龙生成。
+
+**技术栈**：Hyperframes（HTML 合成 + 逐帧渲染）+ edge-tts（中文 TTS）+ GSAP（入场动画）+ FFmpeg（字幕烧录）
+
+**方法论**：十步流水线
+
+1. **准备脚本** — 将内容组织为场景列表（标题/副标题/要点/旁白）
+2. **TTS 语音合成** — edge-tts `zh-CN-YunxiNeural` 逐场景生成 MP3
+3. **获取音频时长** — ffprobe 获取精确时长
+4. **计算时间线** — 场景起止时间、音频偏移、动画入点
+5. **编写 HTML 合成文件** — Hyperframes 合成文件 + CSS 深色高端风格 + GSAP 动画
+6. **Lint 检查** — `hyperframes lint` 确保 0 errors
+7. **渲染视频** — `hyperframes render` 无头 Chrome 逐帧截图 + FFmpeg 编码
+8. **生成 SRT 字幕** — 根据旁白文案和时间线生成 SRT
+9. **烧录字幕** — FFmpeg subtitles filter 白字黑描边
+10. **清理** — 删除中间文件，保留成品视频 + HTML 源文件
+
+**输出**：1920×1080 H.264+AAC 视频，带烧录中文字幕
+
+**调用**：`/video-presenter ToB增长框架 6个场景 [每场景标题+要点+旁白文案]`
+
+**前置要求**：Node.js >= 22, FFmpeg, Python 3 + edge-tts, Hyperframes CLI (`npm i -g hyperframes`)
+
+**来源**：2026 年 5 月，从 tob-growth 和 video-editor 两个 skill 的讲解视频制作实践中提炼。
