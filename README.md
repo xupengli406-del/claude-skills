@@ -184,9 +184,9 @@ prd-builder/
 
 ---
 
-### /xiaohongshu — 小红书自动化
+### /xiaohongshu — Obsidian 站内浏览器操控小红书
 
-**用途**：通过 Browser Bridge 插件操控 Obsidian 内嵌浏览器，自动化小红书创作者平台。发布图文/视频笔记、读取个人主页帖子列表、抓取评论数据。利用真实浏览器会话绕过小红书反爬机制。
+**用途**：通过 Browser Bridge 插件驱动 Obsidian 内嵌 Surfing 浏览器，在不离开 Obsidian 的情况下自动化小红书创作者平台。发布图文/视频笔记、读取个人主页帖子列表、抓取评论数据。利用真实浏览器会话绕过小红书反爬机制，是 Cursor Open Browser 模式在 Obsidian 中的复刻。
 
 **技术栈**：Browser Bridge (Obsidian 插件) + Surfing (内嵌浏览器) + Python stdlib
 

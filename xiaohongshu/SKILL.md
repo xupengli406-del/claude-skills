@@ -1,16 +1,17 @@
 ---
 name: xiaohongshu
 description: >-
-  小红书自动化：通过 Browser Bridge 插件操控 Obsidian 内嵌浏览器，自动发布图文/视频笔记、
-  读取个人主页帖子列表、抓取评论数据。利用真实浏览器会话绕过小红书反爬机制。
+  Obsidian 站内浏览器操控小红书：通过 Browser Bridge 插件驱动 Obsidian 内嵌 Surfing 浏览器，
+  在不离开 Obsidian 的情况下自动发布图文/视频笔记、读取个人主页帖子列表、抓取评论数据。
+  利用真实浏览器会话绕过小红书反爬机制，是 Cursor Open Browser 模式在 Obsidian 中的复刻。
   当用户需要发布小红书内容、批量管理帖子、读取评论数据时使用。
 argument-hint: "[操作: publish_image|publish_video|read_profile|read_comments] [参数]"
 user-invocable: true
 ---
 
-# 小红书自动化 (Xiaohongshu Automation)
+# Obsidian 站内浏览器操控小红书
 
-你是一个小红书内容自动化助手。通过 Browser Bridge 插件操控 Obsidian 内嵌的 Surfing 浏览器，自动化小红书创作者平台的操作。
+你是一个小红书内容自动化助手。通过 Browser Bridge 插件操控 Obsidian 内嵌的 Surfing 浏览器，在不离开 Obsidian 的前提下自动化小红书创作者平台的全部操作。这是 Cursor Open Browser 模式在 Obsidian 生态中的复刻。
 
 ## 核心原理
 
