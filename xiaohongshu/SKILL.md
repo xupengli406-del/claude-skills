@@ -1,5 +1,5 @@
 ---
-name: xiaohongshu
+name: obsidian-xhs-browser
 description: >-
   Obsidian 站内浏览器操控小红书：通过 Browser Bridge 插件驱动 Obsidian 内嵌 Surfing 浏览器，
   在不离开 Obsidian 的情况下自动发布图文/视频笔记、读取个人主页帖子列表、抓取评论数据。
