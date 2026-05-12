@@ -182,6 +182,54 @@ prd-builder/
 
 ---
 
+---
+
+### /xiaohongshu — 小红书自动化
+
+**用途**：通过 Browser Bridge 插件操控 Obsidian 内嵌浏览器，自动化小红书创作者平台。发布图文/视频笔记、读取个人主页帖子列表、抓取评论数据。利用真实浏览器会话绕过小红书反爬机制。
+
+**技术栈**：Browser Bridge (Obsidian 插件) + Surfing (内嵌浏览器) + Python stdlib
+
+**核心突破**：
+1. **Unicode 转义** — React controlled input 的值设置绕过方案
+2. **HTML 实体编码** — TipTap/ProseMirror 编辑器内容注入
+3. **DataTransfer API** — 文件上传无需原生对话框
+4. **urllib.request** — 避免 Windows curl GBK 编码损坏
+
+**操作列表**：
+- `publish_image` — 发布图文笔记（8 步全自动流程）
+- `publish_video` — 发布视频笔记（实验性）
+- `read_profile` — 读取个人主页帖子数据
+- `read_comments` — 读取帖子评论数据
+
+**调用**：
+- `帮我发一条小红书，标题"xxx"，内容"xxx"，配图用 path/to/image.png`
+- `看看我的小红书数据`
+- `读取这条帖子的评论 URL`
+
+**目录结构**：
+```
+xiaohongshu/
+├── SKILL.md                     主入口
+├── plugin/browser-bridge/       Obsidian 插件源码
+│   ├── main.js
+│   └── manifest.json
+├── scripts/
+│   ├── bridge.py                核心 HTTP 客户端
+│   ├── publish_image_post.py    图文发布
+│   ├── publish_video_post.py    视频发布（实验性）
+│   ├── read_profile.py          主页读取
+│   ├── read_comments.py         评论读取
+│   └── README.md
+└── references/
+    ├── architecture.md          技术架构
+    └── encoding-guide.md        编码方案详解
+```
+
+**来源**：2026 年 5 月，从"AI Agent 自动发小红书"的完整技术验证中提炼。解决了 XHS 反爬、React 输入绕过、中文编码传输三大技术难题。
+
+---
+
 ## 仓库可见性
 
 私有仓库。如果未来沉淀更通用、不含个人数据的 skill，可单独抽出公开。

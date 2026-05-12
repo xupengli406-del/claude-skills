@@ -1,0 +1,9 @@
+{
+  "id": "browser-bridge",
+  "name": "Browser Bridge",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.5",
+  "description": "Exposes Obsidian's embedded browser (Surfing) to AI agents via a local HTTP API. Enables Cursor-like browser automation from Claudian.",
+  "author": "xupengli406",
+  "isDesktopOnly": true
+}
