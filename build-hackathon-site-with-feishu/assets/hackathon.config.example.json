@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "event": {
+    "id": "hackathon-city-year",
+    "name": "黑客松活动名称",
+    "shortName": "HACKATHON",
+    "city": "待确认",
+    "venue": "待确认",
+    "timezone": "Asia/Shanghai",
+    "startsAt": "YYYY-MM-DDTHH:mm:ss+08:00",
+    "endsAt": "YYYY-MM-DDTHH:mm:ss+08:00",
+    "status": "applications_open",
+    "teamSize": { "min": 1, "max": 3 },
+    "capacity": 60,
+    "prizePoolCny": 30000
+  },
+  "brand": {
+    "organizer": "主办方名称",
+    "cohosts": ["联合主办方"],
+    "accent": "#24E692",
+    "background": "#070909",
+    "favicon": "/favicon.svg",
+    "ogImage": "/og.png"
+  },
+  "hero": {
+    "mode": "spotlight",
+    "eyebrow": "BUILD · TEST · SHIP",
+    "title": ["MAKE IDEAS", "REAL"],
+    "tagline": "在限定时间内，把想法做成可运行的作品。",
+    "baseImage": "/hero-base.webp",
+    "revealImage": "/hero-reveal.webp",
+    "video": null,
+    "poster": "/hero-base.webp",
+    "spotlightRadius": 260
+  },
+  "tracks": [{
+    "id": "track-01",
+    "name": "赛道名称",
+    "kicker": "关键词 A / 关键词 B / 关键词 C",
+    "description": "由活动主办方提供的赛道说明。",
+    "image": "/track-coding.webp"
+  }],
+  "agenda": [],
+  "advocates": [],
+  "judges": [],
+  "scoring": [],
+  "awards": [],
+  "gallery": [],
+  "links": {
+    "rules": "https://example.feishu.cn/docx/REPLACE_ME",
+    "contestantHandbook": "https://example.feishu.cn/docx/REPLACE_ME",
+    "winners": "https://example.feishu.cn/docx/REPLACE_ME",
+    "privacy": "https://example.feishu.cn/docx/REPLACE_ME"
+  },
+  "registration": {
+    "enabled": true,
+    "schemaVersion": "registration-schema-v1",
+    "apiPath": "/api/register",
+    "consentVersion": "privacy-v1"
+  },
+  "verification": {
+    "factsLastVerifiedAt": null,
+    "feishuLinksLastVerifiedAt": null,
+    "registrationE2eLastVerifiedAt": null
+  }
+}

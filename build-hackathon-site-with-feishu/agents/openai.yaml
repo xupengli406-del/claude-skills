@@ -1,0 +1,10 @@
+interface:
+  display_name: "黑客松官网与飞书后台"
+  short_description: "搭建黑客松活动网站、报名入口和飞书管理后台"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#24E692"
+  default_prompt: "使用 $build-hackathon-site-with-feishu 先复刻经典聚光地形首屏，再替换活动信息、搭建报名表单并连接飞书管理后台。"
+
+policy:
+  allow_implicit_invocation: true
