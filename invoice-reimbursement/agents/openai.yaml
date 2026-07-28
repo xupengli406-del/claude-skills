@@ -1,0 +1,4 @@
+interface:
+  display_name: "发票报销 Skills"
+  short_description: "从飞书邮箱整理发票并完成差旅或日常报销的汇联易提单流程"
+  default_prompt: "Use $invoice-reimbursement to整理发票并在汇联易创建差旅或日常报销单。"
