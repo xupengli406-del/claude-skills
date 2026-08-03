@@ -118,14 +118,26 @@ Return all three:
 3. A short changelog: which bullets changed and why (so the user can audit
    the senior-HR rewrites in 30 seconds).
 
+## Repository retention policy
+
+- `resumes/` is the canonical GitHub location for the user's current,
+  application-ready PDFs.
+- Keep only the latest active variants in `resumes/`; replace superseded PDFs
+  instead of accumulating versioned history files.
+- Keep `SKILL.md`, the templates, layout/writing rules, and rendering scripts
+  beside the current resumes because they are the reproducible maintenance
+  system for those deliverables.
+
 ## Project structure
 
 ```
 resume-builder/
+├── README.md             current resumes and retention policy
 ├── SKILL.md              ← you are here
 ├── style-guide.md        senior-HR writing rules
 ├── layout-spec.md        A4 single-page visual grammar
 ├── version-strategy.md   role × company tailoring matrix
+├── resumes/              latest application-ready PDFs only
 ├── templates/
 │   └── resume.html       placeholder template, edit only the body
 └── scripts/
