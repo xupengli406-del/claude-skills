@@ -8,10 +8,11 @@
 ## 当前简历
 
 - [AI 产品经理｜通用版](resumes/李旭鹏_AI产品经理_通用版.pdf)
+- [Agent Harness 产品经理｜通用版](resumes/李旭鹏_Agent_Harness产品经理_通用版.pdf)
 - [Agent Harness 产品经理｜DeepSeek](resumes/李旭鹏_Agent_Harness产品经理_DeepSeek.pdf)
 - [WorkBuddy AI 产品经理｜腾讯](resumes/李旭鹏_WorkBuddy_AI产品经理_腾讯.pdf)
 
-更新时间：2026-08-03
+更新时间：2026-08-06
 
 ## 维护规则
 
