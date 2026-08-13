@@ -72,6 +72,9 @@ Follow [style-guide.md](style-guide.md) strictly. The non-negotiables:
 - Each bullet starts with a **bold capability label** (`<b>能力名：</b>...`).
 - Abstract tasks into capabilities, not the reverse.
 - Quantify whenever possible (`20+ 玩家`, `4 场首届黑客松`, `双轨变现模型`).
+- Allocate detail by evidence strength: 3–4 bullets for the strongest target project, 2 for differentiated evidence, 1 or a merged mention for supporting work.
+- Treat a sustained entrepreneurial/independent period as a formal work entry when it explains an employment gap; never invent unconfirmed months.
+- Use “FDE 型产品实践” only with customer-site discovery, workflow decomposition, scoping, prototype/solution validation, and field-feedback iteration. Never rename the user's role to FDE.
 - Forbid: 熟稔, 精湛, 深谙, v1.0, 13 周, "负责了…工作".
 - Prefer: 精通, 深度使用, 重度使用者, 主导, 牵头, 沉淀, 闭环.
 - "等" is a deliberate signal — list 3–4 strongest items, append "等".
@@ -85,7 +88,7 @@ Edit [templates/resume.html](templates/resume.html). Do NOT touch the
 
 Layout invariants (see [layout-spec.md](layout-spec.md) for the full grid):
 
-- A4, 13mm side margin, 12mm bottom margin, 9.5pt body, 1.45 line-height.
+- A4, 12.5mm side margin, 9mm bottom margin, 9.15pt body, 1.42 line-height.
 - Section title: black inline-block, white text, 12pt, 1px letter-spacing.
 - Bullet marker: 4×4px solid square, never round dot, never `•`.
 - Header is `flex space-between`: name+contact left, target position right.
@@ -104,6 +107,8 @@ After rendering, **always read `output/preview.png` yourself** to confirm:
 1. It is exactly one page (no overflow into page 2).
 2. The header line, section blocks, and bullets are aligned as expected.
 3. No `{{placeholder}}` leaked through.
+4. Every `.kv-row` label (especially `Vibe Coding`) stays on one line.
+5. The actual PDF has exactly one page; do not infer this only from the browser screenshot.
 
 If overflow happens, trim in this order: (a) shorten the longest bullet,
 (b) drop the weakest project's tail bullet, (c) merge two adjacent jobs.

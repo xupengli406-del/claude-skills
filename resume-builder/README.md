@@ -12,7 +12,7 @@
 - [Agent Harness 产品经理｜DeepSeek](resumes/李旭鹏_Agent_Harness产品经理_DeepSeek.pdf)
 - [WorkBuddy AI 产品经理｜腾讯](resumes/李旭鹏_WorkBuddy_AI产品经理_腾讯.pdf)
 
-更新时间：2026-08-06
+更新时间：2026-08-13
 
 ## 维护规则
 

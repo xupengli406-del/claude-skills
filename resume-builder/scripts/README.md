@@ -13,8 +13,11 @@ pip install pymupdf
 # Node 端（用于 render_pdf.mjs）
 npm init -y                              # 仅首次
 npm install playwright
+npm install pdf-lib
 npx playwright install chromium          # 下载 Chromium 内核
 ```
+
+如果机器没有下载 Playwright Chromium，脚本会尝试使用系统 Chrome/Edge；也可通过 `RESUME_BROWSER_PATH` 指定浏览器可执行文件。不要在 Skill 中写死用户名或机器专属路径。
 
 如果 `~/.claude/skills/resume-builder/` 下没有 `package.json`，先 `npm init -y` 再 `npm install playwright`。playwright 与 chromium 加起来约 200MB，下载一次后所有后续渲染秒级完成。
 

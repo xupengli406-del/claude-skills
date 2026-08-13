@@ -10,9 +10,9 @@
 | --- | --- |
 | 纸张 | A4 (210mm × 297mm) |
 | `@page` margin | 0（边距由 `.page` 内 padding 控制） |
-| `.page` padding | 顶 13mm / 右 13mm / 底 12mm / 左 13mm |
-| 内容宽度 | 184mm（210 − 13 × 2） |
-| 内容高度 | 272mm（297 − 13 − 12） |
+| `.page` padding | 顶 10.5mm / 右 12.5mm / 底 9mm / 左 12.5mm |
+| 内容宽度 | 185mm（210 − 12.5 × 2） |
+| 内容高度 | 277.5mm（297 − 10.5 − 9） |
 | 渲染目标 | 严格单页 |
 
 ---
@@ -21,16 +21,16 @@
 
 | 元素 | 字号 | 字重 | 行高 |
 | --- | --- | --- | --- |
-| 正文（body） | 9.5pt | 400 | 1.45 |
-| 姓名（.name） | 26pt | 700 | 1 |
-| 联系方式（.contact） | 9.5pt | 400 | — |
-| 意向岗位标签（.label） | 9pt | 400 | letter-spacing 6px |
-| 意向岗位（.target） | 14pt | 700 | — |
-| Section 标题（.section-title） | 12pt | 700 | letter-spacing 1px |
-| 项目/工作标题（.item-title） | 11pt | 700 | — |
-| 项目时间/角色（.item-meta） | 9.5pt | 500 | nowrap |
-| 教育/技能行 | 9.5–10pt | 700 表头 | — |
-| Bullet 正文 | 9.5pt | 400 | 1.5 |
+| 正文（body） | 9.15pt | 400 | 1.42 |
+| 姓名（.name） | 25pt | 700 | 1 |
+| 联系方式（.contact） | 9.2pt | 400 | — |
+| 意向岗位标签（.label） | 8.7pt | 400 | letter-spacing 5px |
+| 意向岗位（.target） | 13.2pt | 700 | — |
+| Section 标题（.section-title） | 10.7pt | 700 | letter-spacing 1px |
+| 项目/工作标题（.item-title） | 10.2pt | 700 | — |
+| 项目时间/角色（.item-meta） | 8.9pt | 500 | nowrap |
+| 教育/技能行 | 8.95–9.4pt | 700 表头 | — |
+| Bullet 正文 | 9.05pt | 400 | 1.43 |
 
 字体栈：`"PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Arial, sans-serif`
 
@@ -60,7 +60,7 @@
 └───────────────────────────────────────┘
 ```
 
-Section 之间间距：`margin-top: 12px`（首个 section 仅 4px）。Section 标题与内容间距：`margin-bottom: 6px`。
+Section 之间间距：`margin-top: 8px`（首个 section 为 0）。Section 标题与内容间距：`margin-bottom: 4px`。
 
 固定 Section 顺序：
 
@@ -79,8 +79,8 @@ Section 之间间距：`margin-top: 12px`（首个 section 仅 4px）。Section 
 ```
 flex space-between, align-items: flex-end
 border-bottom: 1px solid #1c1c1e
-padding-bottom: 8px
-margin-bottom: 14px
+padding-bottom: 7px
+margin-bottom: 9px
 ```
 
 左侧：姓名（粗黑大字） + 联系方式（手机 | 邮箱）  
@@ -90,8 +90,8 @@ margin-bottom: 14px
 
 ```
 display: grid
-grid-template-columns: 1.4fr 1.4fr 0.8fr 1fr
-column-gap: 16px
+grid-template-columns: 1.35fr 1.35fr 0.7fr 1fr
+column-gap: 14px
 ```
 
 四列：学校（粗体） / 专业 / 学历 / 时间（右对齐灰色）
@@ -104,28 +104,28 @@ justify-content: space-between
 align-items: baseline
 ```
 
-左：item-title（粗黑 11pt）  
-右：item-meta = `<span class="role">角色</span>时间`（角色加粗，role 与时间间距 18px）
+左：item-title（粗黑 10.2pt）
+右：item-meta = `<span class="role">角色</span>时间`（角色加粗，role 与时间间距 14px）
 
 ### Bullets
 
 ```
 list-style: none
-正文 padding-left: 12px（给方块留位）
-li::before { width: 4px; height: 4px; background: #1c1c1e; top: 0.55em; }
+正文 padding-left: 11px（给方块留位）
+li::before { width: 3.5px; height: 3.5px; background: #1c1c1e; top: 0.55em; }
 ```
 
-**4×4 px 实心方块**，不是圆点。bullet 间距 `margin: 1.5px 0`。
+**3.5×3.5 px 实心方块**，不是圆点。bullet 间距 `margin: 1px 0`。
 
 ### 技能与荣誉 kv-row
 
 ```
 display: grid
-grid-template-columns: 70px 1fr
-column-gap: 12px
+grid-template-columns: 76px 1fr
+column-gap: 10px
 ```
 
-两列：标签（70px 固定，粗体） / 内容。
+两列：标签（76px 固定，粗体且 `white-space: nowrap`） / 内容。`Vibe Coding` 等标签必须保持单行。
 
 ---
 
@@ -166,6 +166,7 @@ pdf: {
 - [ ] 每个 section 的标题都是黑底白字
 - [ ] bullet 是方块不是圆点
 - [ ] 所有 item 的"角色 + 时间"都对齐右侧
+- [ ] 技能与荣誉左侧标签均保持单行
 - [ ] 没有彩色出现
 - [ ] 没有任何 {{占位符}} 漏渲染
 ```
