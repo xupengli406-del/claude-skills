@@ -70,10 +70,10 @@ Before delivery, verify:
 
 When the user wants a Chinese self-media package, prefer this reusable shape:
 
-1. one-line project title and visual summary;
-2. five numbered observations explaining the creative method;
+1. a viewer-facing work title that names the visual idea, not an internal label such as experiment, test, workflow, or showcase;
+2. five numbered observations explaining how the images were made: palette reduction, source-image translation, composition, continuity into the carrier, and material response;
 3. a compact English prompt reference;
 4. focused hashtags;
 5. a placeholder for the platform link until the post exists.
 
-Write as a creator sharing discoveries, not as a product manual or sales pitch.
+Write about the visible work and the decisions that produced it. Do not substitute release order, audience psychology, publishing strategy, content sequencing, or project management for creative-process explanation. Write as a creator sharing discoveries, not as a product manual or sales pitch.
