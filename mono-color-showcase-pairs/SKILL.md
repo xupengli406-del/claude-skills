@@ -63,6 +63,7 @@ Before delivery, verify:
 - no image contains internal sequence labels or unexplained editorial metadata;
 - no invented brand, venue, route number, product detail, or fake publication mark appears;
 - the same design conforms to the carrier rather than floating over it;
+- real-world applications remain physically usable and safe: vehicle graphics must not obscure the driver's windshield, lights, mirrors, cameras, doors, route displays, sensors, or other safety equipment; keep front glazing fully clear and break the artwork cleanly around transparent windows;
 - all final images share the requested ratio and are stored in publish order;
 - the contact sheet is clearly marked as internal preview only.
 
