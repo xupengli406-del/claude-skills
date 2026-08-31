@@ -1,0 +1,8 @@
+interface:
+  display_name: "Mono-color 应用组图"
+  short_description: "生成母图与意外应用成对出现的媒体组图"
+  brand_color: "#2148B8"
+  default_prompt: "Use $mono-color-showcase-pairs to create nine clean style-to-application pairs for a social-media carousel."
+
+policy:
+  allow_implicit_invocation: true
