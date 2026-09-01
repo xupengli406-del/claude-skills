@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "chunk_size": 500000,
+  "assets": [
+    {
+      "target": "assets/fonts/NotoSansCJKsc-Black.otf",
+      "size": 17797908,
+      "sha256": "2267c4a0312d267dff8c0d1609948f7d949a3da8be3e126f5e2690cb9cc883b4",
+      "parts": [
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaaa",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaab",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaac",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaad",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaae",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaaf",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaag",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaah",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaai",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaaj",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaak",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaal",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaam",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaan",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaao",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaap",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaaq",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaar",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaas",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaat",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaau",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaav",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaaw",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaax",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaay",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaaz",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partaba",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabb",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabc",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabd",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabe",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabf",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabg",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabh",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabi",
+        "assets/.parts/NotoSansCJKsc-Black.otf.partabj"
+      ]
+    },
+    {
+      "target": "assets/reference-standing.png",
+      "size": 4386353,
+      "sha256": "9aa4ed3b23ddb9f085cf7140c2ce3c0ed475d2412c35dd39c806b87591cdfe86",
+      "parts": [
+        "assets/.parts/reference-standing.png.partaaa",
+        "assets/.parts/reference-standing.png.partaab",
+        "assets/.parts/reference-standing.png.partaac",
+        "assets/.parts/reference-standing.png.partaad",
+        "assets/.parts/reference-standing.png.partaae",
+        "assets/.parts/reference-standing.png.partaaf",
+        "assets/.parts/reference-standing.png.partaag",
+        "assets/.parts/reference-standing.png.partaah",
+        "assets/.parts/reference-standing.png.partaai"
+      ]
+    },
+    {
+      "target": "assets/reference-seated.png",
+      "size": 5629555,
+      "sha256": "dfd9e9516c705bfd3ba0f8c73696034781a53badfb274e38cc15d2cc95d856e1",
+      "parts": [
+        "assets/.parts/reference-seated.png.partaaa",
+        "assets/.parts/reference-seated.png.partaab",
+        "assets/.parts/reference-seated.png.partaac",
+        "assets/.parts/reference-seated.png.partaad",
+        "assets/.parts/reference-seated.png.partaae",
+        "assets/.parts/reference-seated.png.partaaf",
+        "assets/.parts/reference-seated.png.partaag",
+        "assets/.parts/reference-seated.png.partaah",
+        "assets/.parts/reference-seated.png.partaai",
+        "assets/.parts/reference-seated.png.partaaj",
+        "assets/.parts/reference-seated.png.partaak",
+        "assets/.parts/reference-seated.png.partaal"
+      ]
+    }
+  ]
+}

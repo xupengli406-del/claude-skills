@@ -1,0 +1,16 @@
+{
+  "latin_wide": ["/System/Library/Fonts/Supplemental/Impact.ttf", "assets/fonts/BowlbyOneSC-Regular.ttf"],
+  "latin_condensed": ["assets/fonts/Anton-Regular.ttf", "DIN Condensed Bold"],
+  "cjk_heavy": ["assets/fonts/NotoSansCJKsc-Black.otf", "/System/Library/Fonts/Hiragino Sans GB.ttc", "/System/Library/Fonts/STHeiti Medium.ttc"],
+  "macos_fallbacks": {
+    "latin": "/System/Library/Fonts/Supplemental/DIN Condensed Bold.ttf",
+    "latin_wide": "/System/Library/Fonts/Supplemental/Impact.ttf",
+    "cjk": "assets/fonts/NotoSansCJKsc-Black.otf"
+  },
+  "licenses": {
+    "Bowlby One SC": "assets/fonts/OFL-BowlbyOneSC.txt",
+    "Anton": "assets/fonts/OFL-Anton.txt",
+    "Noto Sans CJK SC Black": "assets/fonts/OFL-NotoSansCJK.txt"
+  },
+  "note": "Bowlby One SC, Anton, and Noto Sans CJK SC Black are bundled under SIL OFL 1.1."
+}

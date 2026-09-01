@@ -1,0 +1,7 @@
+interface:
+  display_name: "丧尸清道夫复古未来封面"
+  short_description: "生成复古原子朋克末世角色群像、自媒体封面与精确标题排版"
+  brand_color: "#B43A28"
+  default_prompt: "Use $zombie-scavenger-cover to create a 16:9 Chinese social-media cover from my topic."
+policy:
+  allow_implicit_invocation: true
