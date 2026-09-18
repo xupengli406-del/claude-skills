@@ -13,8 +13,10 @@ description: >-
 Sustains the user's personal resume as a versioned product. Every output is
 a **single-page A4 PDF** with a fixed black/white visual identity and senior
 HR writing voice, regardless of which job/company it targets. Include an
-available, suitable photo of the user by default; keep the no-photo layout
-when none is available or the user/application explicitly requests no photo.
+available, suitable photo of the user by default. If no finished headshot is
+available, use the built-in portrait-preparation branch below; do not silently
+skip the photo. An explicit no-photo preference or application requirement
+takes priority.
 
 ## Trigger scenarios
 
@@ -34,7 +36,7 @@ version** and do an incremental edit. Otherwise, start from
 
 ```
 Task progress (copy + check off):
-- [ ] 1. Intake     — collect raw material, identify base version
+- [ ] 1. Intake     — collect raw material, identify base version, reuse/prepare portrait
 - [ ] 2. Position   — pick role × company variant via version-strategy.md
 - [ ] 3. Write      — draft / rewrite each bullet per style-guide.md
 - [ ] 4. Layout     — fill templates/resume.html, respect layout-spec.md
@@ -57,13 +59,41 @@ Goal: lock down a single source of truth before writing.
   when the old resume has none. Prefer the user-selected business/headshot
   photo; inspect it visually before use. Do not use an identity-document scan
   as a headshot. Keep the original intact and apply the photo rules in
-  layout-spec.md. No suitable photo is not a blocker to drafting the resume.
+  layout-spec.md. If no finished headshot is suitable, follow the built-in
+  portrait-preparation branch; continue drafting text while an input is missing.
 - Reuse facts already supported by the materials or confirmed in this conversation.
   Ask only for missing or conflicting details that materially affect the target role;
   do not reconfirm settled contact details or responsibilities.
 - A reply such as “这些我都做过，直接补充” confirms the specific activities
   just listed in the question. It permits rewriting those activities, not inventing
   their scale, methods, outcomes, or a broader job title.
+
+### Portrait preparation — when no suitable headshot exists
+
+The `american-business-headshot` workflow is bundled directly in this Skill.
+When generation is needed, read both the [complete workflow](references/american-business-headshot/workflow.md)
+and [prompt + visual checks](references/american-business-headshot/references/portrait-contract.md).
+No separate Skill installation is required; an available image-generation/editing tool is still needed.
+
+- **Ready headshot available:** reuse the selected suitable image; do not regenerate it merely because this branch exists.
+- **Only a clear photo of the user is available:** explain that it can be turned into a resume headshot, then use the built-in workflow as the default next step unless the user declines. Inspect the reference first and preserve identity. If generation has already been requested or accepted, proceed without asking again.
+- **No reliable identity reference:** ask for a clear front-facing photo of the user. Continue the resume text meanwhile; do not invent a face from the name, job history, or a generic model. If the user opts to proceed without a photo, use the no-photo header.
+- **Generation unavailable or unsuccessful:** state the concrete limitation and continue the text/layout work. Keep the photo pending or use an explicitly chosen no-photo version; do not call a failed or unreviewed image a finished headshot.
+
+The built-in default is a text-free, white-background 3:4 business portrait
+(1080×1440 PNG), with a navy suit, white shirt, and dark purple tie. The linked
+workflow governs identity, visual quality, and corrections. Review the actual
+result before embedding it; an existing selected image remains current until a
+replacement is suitable, and user rejection overrides the generated candidate.
+Save the usable headshot in the resume project's assets with a relative path,
+retain the original reference and full-resolution portrait, then follow
+layout-spec.md for header placement and actual-PDF checks. Never put personal
+photos or generated portraits inside this Skill bundle or its public repository.
+
+Bundled source: [american-business-headshot at 5eb3756](https://github.com/xupengli406-del/american-business-headshot/tree/5eb3756e1c70c43648a5b210ea8ae5cf83327c2a).
+The entrypoint metadata is omitted from `workflow.md` to avoid duplicate Skill discovery;
+the workflow body, prompt contract, and [MIT license](references/american-business-headshot/LICENSE)
+are preserved. When refreshing the bundle, review the upstream workflow and prompt contract together.
 
 ### Stage 2 — Position
 
@@ -169,6 +199,11 @@ resume-builder/
 ├── layout-spec.md        A4 single-page visual grammar
 ├── version-strategy.md   role × company tailoring matrix
 ├── resumes/              latest application-ready PDFs only
+├── references/
+│   └── american-business-headshot/
+│       ├── workflow.md   bundled headshot workflow
+│       ├── LICENSE
+│       └── references/portrait-contract.md
 ├── templates/
 │   └── resume.html       placeholder template, edit only the body
 └── scripts/
@@ -189,5 +224,6 @@ resume-builder/
 - Do not use emoji or colored typography/accents — black/white minimalist is
   the identity. An included user portrait may retain its original colors.
 - Do not omit an available suitable portrait just because the base resume
-  has none; honor an explicit no-photo preference or application requirement.
+  has none. When only an identity reference is available, use the built-in
+  headshot workflow; honor an explicit no-photo preference or application requirement.
 - Do not edit `<style>` block in `templates/resume.html` — break visual lock.
