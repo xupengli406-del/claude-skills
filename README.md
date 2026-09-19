@@ -312,3 +312,35 @@ video-editor/
 **前置要求**：Node.js >= 22, FFmpeg, Python 3 + edge-tts, Hyperframes CLI (`npm i -g hyperframes`)
 
 **来源**：2026 年 5 月，从 tob-growth 和 video-editor 两个 skill 的讲解视频制作实践中提炼。
+
+---
+
+### /invoice-reimbursement — 发票报销
+
+**用途**：从飞书邮箱检索并下载发票，按事项整理交通、住宿和打车材料，生成汇联易上传包与核对清单，并完成差旅报销或日常报销的建单、校验和提交。
+
+**两种模式**：
+
+1. **差旅报销** — 按出差事项归档，关联差旅申请，核对飞机/高铁、住宿和市内交通。
+2. **日常报销** — 按日常费用事项归档，不关联差旅申请，按公司费用科目逐项确认。
+
+**调用**：
+
+- Codex：`$invoice-reimbursement 整理这批发票并创建日常报销单`
+- 自然语言：`用发票报销 Skills 处理这次差旅报销`
+
+**目录结构**：
+
+```text
+invoice-reimbursement/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── references/
+│   ├── file-and-mail-workflow.md
+│   └── huilianyi-workflow.md
+└── scripts/
+    └── prepare-invoice-upload.ps1
+```
+
+**来源**：2026 年 7 月，从两次北京差旅发票整理与汇联易提单的完整流程中提炼，并扩展支持日常报销。
