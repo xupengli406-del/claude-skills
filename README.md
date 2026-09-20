@@ -13,6 +13,26 @@ cp -r claude-skills/* ~/.claude/skills/
 
 ## Skills 列表
 
+### /ai-content-opportunity — AI 内容选题与商业化
+
+**用途**：把 AI 新闻、产品更新、实测发现或技术思考转成选题决策，判断值得发、改写、补证或不发。
+
+**方法论**：三层受众（AI 小白 / AI 使用者 / AI 从业者）分别对齐培训与自有产品、商单、行业信用。区分研究价值与内容价值，用证据和行为变化做发布门槛，再选择内容形式和标题角度。
+
+**核心原则**：研究向下，表达向上；专业知识是生产资料，不一定是商品；用户知道后是否会改变下一次使用 AI 的行为。
+
+**调用示例**：
+
+- `用 ai-content-opportunity 判断：这个 AI 更新是否值得讲给小白？我希望承接培训。`
+- `用 ai-content-opportunity 评估这份工具对比记录，主要面向已在使用 AI 的人，目标是商单合作。`
+- `用 ai-content-opportunity 判断这个架构观点该独立发，还是只留作研究素材。`
+
+**入口与示例**：[SKILL.md](ai-content-opportunity/SKILL.md) · [判断示例](ai-content-opportunity/references/examples.md)。示例为假设案例，不作为当前产品能力或价格的证明。评分是可校准的编辑启发式，不预测播放量或收入。
+
+**单独安装**：将仓库中的整个 `ai-content-opportunity/` 目录复制到所用工具的 skills 目录。Codex 默认位置为 `~/.codex/skills/`（设置了 `CODEX_HOME` 时为其下的 `skills/`）；Claude Code 为 `~/.claude/skills/`。Codex 中可使用 `$ai-content-opportunity`，也可用自然语言提出选题评估请求。
+
+---
+
 ### /biz-judge-tob — ToB 结构性商业判断框架
 
 **用途**：评估一个新项目、新产品或新业务机会的商业可行性。
