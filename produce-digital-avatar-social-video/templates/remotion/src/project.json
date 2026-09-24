@@ -70,7 +70,15 @@
     {
       "start": 4,
       "end": 7.8,
-      "text": "人物和资料在同一画面里接续"
+      "text": "人物和资料在同一画面里接续",
+      "emphasis": {
+        "lead": "人物和资料",
+        "focus": "在同一画面里接续",
+        "key": "同一画面",
+        "at": 5.2,
+        "ratio": 1.28,
+        "timingSource": "silent-demo-only"
+      }
     },
     {
       "start": 8,
@@ -95,7 +103,15 @@
     {
       "start": 25.5,
       "end": 30,
-      "text": "几种素材，形成一条完整的视频"
+      "text": "几种素材，形成一条完整的视频",
+      "emphasis": {
+        "lead": "几种素材，",
+        "focus": "形成一条完整的视频",
+        "key": "完整的视频",
+        "at": 26.6,
+        "ratio": 1.28,
+        "timingSource": "silent-demo-only"
+      }
     }
   ]
 }

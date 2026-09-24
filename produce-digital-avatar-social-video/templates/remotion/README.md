@@ -43,3 +43,7 @@ npm run render
 已知信息留在屏幕，下一步在它旁边展开；大的位移平滑完成后留读图停顿。四层标签清楚且正面可读。不要同时叠淡入淡出的文字，不要清空画面等待下页。用字幕区域实际背景决定字幕对比。更多条件见`../../references/continuous-motion.md`。
 
 图标：Lucide 0.468.0，ISC许可证在`public/icons/LICENSE.txt`。本模板未捆绑Pixabay原音频、系统字体或私人数字人素材。
+
+### 字幕分层
+
+执行[字幕规范](../../references/subtitles.md)。`captions` 普通cue保留原有接口，重点cue可加`emphasis`的`lead/focus/key/at/ratio`；组件已支持先铺垫、到实际发声时再显示重点。`project.json`是无声版式示例，时间不能直接套进真实音轨。`display: "graphic"`仅在主画面实际承接原话时去重。

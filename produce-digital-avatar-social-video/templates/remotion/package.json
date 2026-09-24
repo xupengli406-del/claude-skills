@@ -6,7 +6,7 @@
     "studio": "remotion studio src/index.jsx",
     "render": "node scripts/render.mjs",
     "check": "node scripts/check.mjs",
-    "test": "node --test src/timing.test.mjs"
+    "test": "node --test src/*.test.mjs"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.520",

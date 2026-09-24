@@ -1,4 +1,5 @@
 import React from 'react';
+import {SemanticCaptions} from './SemanticCaptions';
 import {Audio, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ease, frame, rectAt} from './timing.mjs';
 
@@ -21,10 +22,8 @@ export function Avatar({segments}) {
     <OffthreadVideo src={staticFile(s.file)} startFrom={frame(s.sourceFrom,fps)} playbackRate={s.rate??1} muted style={{width:'100%',height:'100%',objectFit:'cover'}}/>
   </Sequence>);
 }
-export function Captions({cues,color}) {
-  const t=useTime(),cue=cues.find(c=>t>=c.start&&t<c.end);
-  if(!cue)return null;
-  return <Text x={80} y={1670} size={47} color={color} style={{width:920,textAlign:'center',fontWeight:650,whiteSpace:'pre-line'}}>{cue.text}</Text>;
+export function Captions({cues,color,accent,onVideo=false}) {
+  return <SemanticCaptions time={useTime()} cues={cues} color={color} accent={accent} onVideo={onVideo}/>;
 }
 export function Soundtrack({narration,sfx=[]}) {
   const {fps}=useVideoConfig();

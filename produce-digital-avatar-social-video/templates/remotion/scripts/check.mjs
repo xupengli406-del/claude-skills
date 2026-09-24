@@ -1,13 +1,11 @@
 import fs from 'node:fs';
+import {validateCaptions} from '../src/caption-model.mjs';
 import path from 'node:path';
 const p=JSON.parse(fs.readFileSync('src/project.json','utf8'));
 const fail=msg=>{throw new Error(msg)};
 if(!(p.fps>0&&p.duration>0))fail('fps and duration must be positive');
 let end=0;
-for(const c of p.captions){
-  if(!(c.start>=end&&c.end>c.start&&c.end<=p.duration))fail('Invalid or overlapping caption: '+c.text);
-  end=c.end;
-}
+validateCaptions(p.captions,p.duration);
 const checkFile=f=>{
   if(!f)return;
   const root=path.resolve('public'),resolved=path.resolve(root,f);

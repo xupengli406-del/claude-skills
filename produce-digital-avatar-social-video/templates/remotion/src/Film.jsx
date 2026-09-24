@@ -61,7 +61,7 @@ export function Film({project}) {
     {t<start+.2&&<Rules project={project}/>}
     {/* Outgoing content remains behind the arriving opaque canvas: no blank page. */}
     {t>=start-1&&<AbsoluteFill style={{background:c.bg,clipPath:`inset(${(1-transition)*100}% 0 0 0)`}}><Layers project={project}/></AbsoluteFill>}
-    <Captions cues={project.captions} color={c.ink}/>
+    <Captions cues={project.captions} color={c.ink} accent={c.accent}/>
     <Soundtrack narration={project.narration} sfx={project.sfx}/>
   </AbsoluteFill>;
 }
