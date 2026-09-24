@@ -1,0 +1,4 @@
+interface:
+  display_name: "数字人口播视频"
+  short_description: "用 MOSS 本人音色和 HeyGen 数字人接续口播写稿、字幕、资料动效与发布包制作"
+  default_prompt: "用 $produce-digital-avatar-social-video 把我的想法做成数字人口播视频，沿用我的声音与形象，并完成字幕和资料动效。"

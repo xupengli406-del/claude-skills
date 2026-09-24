@@ -1,0 +1,9 @@
+node_modules/
+.bundle/
+out/
+.env*
+public/*.mp4
+public/*.mp3
+public/*.wav
+public/*.png
+public/*.jpg

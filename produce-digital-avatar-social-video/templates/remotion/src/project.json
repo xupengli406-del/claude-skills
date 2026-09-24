@@ -1,0 +1,101 @@
+{
+  "fps": 30,
+  "duration": 30,
+  "theme": {
+    "bg": "#EAE5DD",
+    "paper": "#F7F3ED",
+    "ink": "#292B27",
+    "muted": "#756D62",
+    "accent": "#985B43",
+    "line": "#BAAF9F",
+    "soft": "#DED6C9"
+  },
+  "fontFamily": "\"PingFang SC\",\"Noto Sans CJK SC\",\"Microsoft YaHei\",sans-serif",
+  "narration": null,
+  "avatarSegments": [],
+  "sfx": [],
+  "rules": {
+    "title": "先讲清楚，再生成",
+    "subtitle": "同一张文档，跟随讲解逐步展开",
+    "rows": [
+      {
+        "at": 1.2,
+        "title": "口播表达",
+        "detail": "写成自然说得出口的话"
+      },
+      {
+        "at": 4.5,
+        "title": "人物与资料",
+        "detail": "该出镜时出镜，该解释时看资料"
+      },
+      {
+        "at": 8,
+        "title": "声音与画面",
+        "detail": "跟随实际音轨，共用时间线"
+      }
+    ],
+    "contractAt": 11.5,
+    "inputsAt": 12.8
+  },
+  "layers": {
+    "from": 16,
+    "spreadAt": 17,
+    "focusAt": [
+      18.5,
+      20,
+      21.5,
+      23
+    ],
+    "assembleAt": 25.5,
+    "title": "四层分开，作用看得清",
+    "labels": [
+      "人物画面",
+      "同步字幕",
+      "动态图形",
+      "声音波形"
+    ],
+    "details": [
+      "形象与对应的嘴型",
+      "跟随当前讲解出现",
+      "解释对象之间的关系",
+      "以实际发声为时间基准"
+    ]
+  },
+  "captions": [
+    {
+      "start": 0,
+      "end": 3.8,
+      "text": "先把这条内容要讲什么确定下来"
+    },
+    {
+      "start": 4,
+      "end": 7.8,
+      "text": "人物和资料在同一画面里接续"
+    },
+    {
+      "start": 8,
+      "end": 11.4,
+      "text": "字幕和画面都跟随实际声音"
+    },
+    {
+      "start": 11.5,
+      "end": 15.8,
+      "text": "规则保留，给下一步素材腾出位置"
+    },
+    {
+      "start": 16,
+      "end": 19.5,
+      "text": "把视频拆成人物、字幕、声音和图形"
+    },
+    {
+      "start": 19.6,
+      "end": 25,
+      "text": "先看清每层的作用，再组合起来"
+    },
+    {
+      "start": 25.5,
+      "end": 30,
+      "text": "几种素材，形成一条完整的视频"
+    }
+  ]
+}

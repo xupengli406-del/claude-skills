@@ -13,6 +13,18 @@ cp -r claude-skills/* ~/.claude/skills/
 
 ## Skills 列表
 
+### /produce-digital-avatar-social-video — 数字人口播完整制作
+
+**用途**：将授权照片与声音接入数字人口播流程，从自然写稿、MOSS 配音、HeyGen 出镜，到同步字幕、Remotion 连续讲解动画、大标题真人封面和发布包。
+
+**默认规范**：信息随讲解逐步揭示，同屏保留上下文；人物主镜头与同步小窗交替，四层拆解动画解释实现；封面采用本人近景、人物轮廓描边、大字压人像，3:4 与 4:3 独立构图。
+
+**附带**：API 脚本、导演表、可运行 Remotion 模板、30 秒通用无声预览、封面排版检查。使用者需准备自己的授权素材、API 额度及渲染环境，不附作者照片、声音或密钥。
+
+**入口**：[使用说明](produce-digital-avatar-social-video/README.md) · [SKILL.md](produce-digital-avatar-social-video/SKILL.md) · [封面规范](produce-digital-avatar-social-video/references/covers.md)。复制整个文件夹至所用助手的 skills 目录；Codex 可用 `$produce-digital-avatar-social-video` 调用。
+
+---
+
 ### /ai-content-opportunity — AI 内容选题与商业化
 
 **用途**：把 AI 新闻、产品更新、实测发现或技术思考转成选题决策，判断值得发、改写、补证或不发。
@@ -252,7 +264,7 @@ xiaohongshu/
 
 ## 仓库可见性
 
-私有仓库。如果未来沉淀更通用、不含个人数据的 skill，可单独抽出公开。
+公开仓库。分享前检查个人数据、凭据及素材许可；数字人口播 Skill 不附作者的个人照片、声音或私有 API 数据。
 
 ---
 
