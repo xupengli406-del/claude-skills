@@ -21,6 +21,8 @@ cp -r claude-skills/* ~/.claude/skills/
 
 **附带**：API 脚本、导演表、可运行 Remotion 模板、30 秒通用无声预览、封面排版检查。使用者需准备自己的授权素材、API 额度及渲染环境，不附作者照片、声音或密钥。
 
+**音频先审**：最终旁白需1×连续听审通过，再提交付费数字人生成；短样片或技术检查不代替全片听感。详见[音频审核关口](produce-digital-avatar-social-video/references/audio-review.md)。
+
 **入口**：[使用说明](produce-digital-avatar-social-video/README.md) · [SKILL.md](produce-digital-avatar-social-video/SKILL.md) · [2D/3D视觉选型](produce-digital-avatar-social-video/references/visual-direction.md) · [封面规范](produce-digital-avatar-social-video/references/covers.md)。复制整个文件夹至所用助手的 skills 目录；Codex 可用 `$produce-digital-avatar-social-video` 调用。
 
 ---
