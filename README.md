@@ -17,11 +17,11 @@ cp -r claude-skills/* ~/.claude/skills/
 
 **用途**：将授权照片与声音接入数字人口播流程，从自然写稿、MOSS 配音、HeyGen 出镜，到同步字幕、Remotion 连续讲解动画、大标题真人封面和发布包。
 
-**默认规范**：信息随讲解逐步揭示，同屏保留上下文；人物主镜头与同步小窗交替，四层拆解动画解释实现；封面采用本人近景、人物轮廓描边、大字压人像，3:4 与 4:3 独立构图。
+**默认规范**：制作前逐段决定人物、真实资料、2D或3D，并在导演表写明表达理由；空间拆合解释层级，2D说明规则与时序，不把一种形式套满全片。统一配色、字幕与节奏，信息随声画逐步揭示，同屏保留上下文，人物主镜头与同步小窗交替。封面沿用大标题真人规范，3:4与4:3独立构图。
 
 **附带**：API 脚本、导演表、可运行 Remotion 模板、30 秒通用无声预览、封面排版检查。使用者需准备自己的授权素材、API 额度及渲染环境，不附作者照片、声音或密钥。
 
-**入口**：[使用说明](produce-digital-avatar-social-video/README.md) · [SKILL.md](produce-digital-avatar-social-video/SKILL.md) · [封面规范](produce-digital-avatar-social-video/references/covers.md)。复制整个文件夹至所用助手的 skills 目录；Codex 可用 `$produce-digital-avatar-social-video` 调用。
+**入口**：[使用说明](produce-digital-avatar-social-video/README.md) · [SKILL.md](produce-digital-avatar-social-video/SKILL.md) · [2D/3D视觉选型](produce-digital-avatar-social-video/references/visual-direction.md) · [封面规范](produce-digital-avatar-social-video/references/covers.md)。复制整个文件夹至所用助手的 skills 目录；Codex 可用 `$produce-digital-avatar-social-video` 调用。
 
 ---
 
