@@ -13,6 +13,20 @@ cp -r claude-skills/* ~/.claude/skills/
 
 ## Skills 列表
 
+### /web-sense-video-editing — 网感剪辑
+
+**用途**：把参考视频里的文字动画、人物抠像与遮挡、蒙版、镜头缩放、定格、转场和声音搭配沉淀成方法库，并用于已有真人口播、展示或信息视频。当前收录 37 个技法、8 组组合配方，以及来源视频和关键截图。
+
+**字幕自然衔接**：同一句字幕先用正常字号和自然间距完整显示；说到重点词才放大，邻字按真实字宽同步平滑让位。不要提前留空槽，也不要只检查放大完成态；强调前、中、后的连续画面都需要验收。独立标题、逐条标签按各自表达目的设计。
+
+**入口**：[SKILL.md](web-sense-video-editing/SKILL.md) · [方法索引](web-sense-video-editing/references/index.md) · [执行流程](web-sense-video-editing/references/execution.md) · [V24 字幕规范](web-sense-video-editing/references/text.md#V24) · [下载 ZIP](https://github.com/xupengli406-del/claude-skills/releases/download/web-sense-video-editing-2026-10-09/web-sense-video-editing.zip)。
+
+**使用**：复制整个 `web-sense-video-editing` 文件夹到所用助手的 skills 目录。Codex 默认目录为 `~/.codex/skills/`，可用 `$web-sense-video-editing` 调用；Claude Code 可复制到 `~/.claude/skills/` 并用 `/web-sense-video-editing` 调用。剪辑已有视频时提供视频及现有工程即可，沿用原声和已选风格。
+
+**来源**：[凌川屿 Vol.12](web-sense-video-editing/references/cases/lc-vol12/case.md) 的拆解片段仅用于方法核对；新成片使用用户自己的素材，不能把参考视频当作用户视频。实际编辑器、字体、抠像和声音素材需按本次环境落实。
+
+---
+
 ### /produce-digital-avatar-social-video — 数字人口播完整制作
 
 **用途**：将授权照片与声音接入数字人口播流程，从自然写稿、MOSS 配音、HeyGen 出镜，到同步字幕、Remotion 连续讲解动画、大标题真人封面和发布包。

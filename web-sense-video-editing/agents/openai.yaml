@@ -1,0 +1,6 @@
+interface:
+  display_name: "网感剪辑"
+  short_description: "持续收录参考视频里的网感做法，并把文字、镜头、蒙版、抠像与声音组合用到实际视频"
+  default_prompt: "使用 $web-sense-video-editing，按我的视频内容应用已收录的网感剪辑技巧，完成剪辑并交付可预览成片。"
+policy:
+  allow_implicit_invocation: true
