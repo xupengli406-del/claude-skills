@@ -4,6 +4,10 @@
 
 新手可先从文字动画认识视频制作，再按需要加入自己的声音、照片数字人或真实录像。完整选用顺序见[视频制作怎么选](references/video-workflow-selection.md)。
 
+## 看效果
+
+[把一句模糊需求变成可执行任务](https://github.com/xupengli406-del/claude-skills/releases/download/video-skill-cases-2026-11-17/01-text-to-animation-task-brief.mp4)：本轮新做、待用户看效果的60秒演示，1920×1080、30fps。输入是一句“帮我做个PPT”，结果是四项补全与一条完整任务写法，由通用Microsoft Yunxi旁白驱动文字和图形动画。真实首帧、输入、结果与开始方式见[案例说明](examples/task-brief-demo/README.md)。
+
 ## 从哪里开始
 
 把主题与大纲交给助手，明确每个场景要解释什么：

@@ -22,6 +22,8 @@
 
 本包共同文件由真人主源的明确白名单在构建时派发，`distribution/shared-video-lock.json` 逐文件记录哈希。不要在生成副本里各改一套。维护源更新后重新同步；独立检查运行 `python scripts/sync_shared_video.py --check --target .`，只读本包lock与文件，不读取兄弟目录。布局和入口是本流程自己的文件，不从共同字幕规则继承。
 
-## 看一个既有呈现
+## 看效果
 
-[电脑录屏与资料讲解学习页](https://my.feishu.cn/wiki/VNszw6X52imETWkoQNYcSQnCnag)收有作者既有390.434秒、1920×1080录屏教程及三份字幕，可观察暖灰资料主屏、真人小窗、真实电脑操作与双语字幕；访问需要相应学习库权限。片中已撤旧Skill名与安装入口仅为历史展示，不作为当前安装教材，也不是这个新包的端到端实测。源码包不携带该原视频、人像或录音。
+[历史录屏教程](https://github.com/xupengli406-del/claude-skills/releases/download/video-skill-cases-2026-11-17/05a-screen-tutorial-history.mp4)：390.434秒、1920×1080、30fps，展示真实操作与资料主屏、真人小窗和双语字幕。输入、结果和当前使用方式见[案例说明](examples/screen-tutorial-history/README.md)。
+
+片中旧Skill名和安装入口仅为历史展示，不作当前安装教材，也不是新拆分录屏包的端到端实测。[学习库页面](https://my.feishu.cn/wiki/VNszw6X52imETWkoQNYcSQnCnag)保留相应教程和字幕，访问需要学习库权限。
