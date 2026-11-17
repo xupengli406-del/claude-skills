@@ -8,7 +8,9 @@
 
 ## 看效果
 
-[我用这个Skill自动生成数字人视频](https://www.douyin.com/video/7690845169612504937)（[原分享短链](https://v.douyin.com/CnoGL2dFYBM/)）是作者的第一条正式发布作品：本人沙发照片转为数字人，使用MOSS合成声音，经HeyGen、Whisper、Remotion与FFmpeg完成口型、字幕和讲解画面。输入、效果和开始方式见[案例说明](examples/avatar-published-demo/README.md)。这是平台发布版，与下方带静音AAC轨道的30秒动效模板分别看待。
+[我用这个Skill自动生成数字人视频](https://www.douyin.com/video/7690845169612504937)（[原分享短链](https://v.douyin.com/CnoGL2dFYBM/)）是作者的第一条正式发布作品：本人沙发照片转为数字人，使用MOSS合成声音，经HeyGen、Whisper、Remotion与FFmpeg完成口型、字幕和讲解画面。输入、效果和开始方式见[案例说明](examples/avatar-published-demo/README.md)。
+
+[下载完整平台发布版](https://github.com/xupengli406-del/claude-skills/releases/download/video-skill-cases-2026-11-17/03-digital-avatar-published.mp4)：269.841秒，1080×1920，保留平台返回的HEVC视频与HE-AACv2声音编码。它是抖音发布版本，与原始母版区分；下方带静音AAC轨道的30秒动效模板继续单独列示。
 
 ## 完整流程
 
