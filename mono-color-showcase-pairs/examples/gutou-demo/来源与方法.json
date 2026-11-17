@@ -1,0 +1,25 @@
+{
+  "key": "mono-color-showcase-pairs",
+  "repo": "xupengli406-del/claude-skills",
+  "head": "dade8c1ec9615bc52cd142890d99a8b6e55194bd",
+  "path": "mono-color-showcase-pairs/SKILL.md",
+  "method": "使用本轮已生成母图作为实际图像输入，锁定主体、文字、油墨与构图，将画面直接印到帆布袋并服从褶皱、侧褶与织物纹理。",
+  "existing_asset_policy": "当前Skill目录只有说明与references，无既有图。本轮复用自己生成的母图，另生成虚构实物应用。",
+  "skill_blob_sha": "7da1556cb3d6346d350f434425ab972d460ca0a6",
+  "references": [
+    {
+      "key": "pair_patterns",
+      "sha": "58aaec8d39b1cba8fb0e2d1b55f1f9d82250d9e8",
+      "url": "https://github.com/xupengli406-del/claude-skills/blob/dade8c1ec9615bc52cd142890d99a8b6e55194bd/mono-color-showcase-pairs/references/prompt-patterns.md"
+    },
+    {
+      "key": "pair_matrix",
+      "sha": "cc0c274065a2b757079b921b43766b8f874ee443",
+      "url": "https://github.com/xupengli406-del/claude-skills/blob/dade8c1ec9615bc52cd142890d99a8b6e55194bd/mono-color-showcase-pairs/references/coverage-matrix.md"
+    }
+  ],
+  "generation_tool": "built-in image_gen",
+  "installed_or_executed_repository_code": false,
+  "generated_demo_label": "本轮演示生成／练习案例",
+  "source_url": "https://github.com/xupengli406-del/claude-skills/blob/dade8c1ec9615bc52cd142890d99a8b6e55194bd/mono-color-showcase-pairs/SKILL.md"
+}

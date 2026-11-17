@@ -13,20 +13,6 @@ cp -r claude-skills/* ~/.claude/skills/
 
 ## Skills 列表
 
-### /web-sense-video-editing — 网感剪辑
-
-**用途**：把参考视频里的文字动画、人物抠像与遮挡、蒙版、镜头缩放、定格、转场和声音搭配沉淀成方法库，并用于已有真人口播、展示或信息视频。当前收录 37 个技法、8 组组合配方，以及来源视频和关键截图。
-
-**字幕自然衔接**：同一句字幕先用正常字号和自然间距完整显示；说到重点词才放大，邻字按真实字宽同步平滑让位。不要提前留空槽，也不要只检查放大完成态；强调前、中、后的连续画面都需要验收。独立标题、逐条标签按各自表达目的设计。
-
-**入口**：[SKILL.md](web-sense-video-editing/SKILL.md) · [方法索引](web-sense-video-editing/references/index.md) · [执行流程](web-sense-video-editing/references/execution.md) · [V24 字幕规范](web-sense-video-editing/references/text.md#V24) · [下载 ZIP](https://github.com/xupengli406-del/claude-skills/releases/download/web-sense-video-editing-2026-10-09/web-sense-video-editing.zip)。
-
-**使用**：复制整个 `web-sense-video-editing` 文件夹到所用助手的 skills 目录。Codex 默认目录为 `~/.codex/skills/`，可用 `$web-sense-video-editing` 调用；Claude Code 可复制到 `~/.claude/skills/` 并用 `/web-sense-video-editing` 调用。剪辑已有视频时提供视频及现有工程即可，沿用原声和已选风格。
-
-**来源**：[凌川屿 Vol.12](web-sense-video-editing/references/cases/lc-vol12/case.md) 的拆解片段仅用于方法核对；新成片使用用户自己的素材，不能把参考视频当作用户视频。实际编辑器、字体、抠像和声音素材需按本次环境落实。
-
----
-
 ### /produce-digital-avatar-social-video — 数字人口播完整制作
 
 **用途**：将授权照片与声音接入数字人口播流程，从自然写稿、MOSS 配音、HeyGen 出镜，到同步字幕、Remotion 连续讲解动画、大标题真人封面和发布包。
@@ -302,38 +288,6 @@ xiaohongshu/
 
 ---
 
-### /video-editor — 视频剪辑工作流
-
-**用途**：从多段原始素材中剪辑出流畅视频并配字幕。自动安装 FFmpeg + Whisper，转录语音，分析内容，去除气口/口误/重复，按指定时长要求剪辑拼接，生成并烧录字幕。
-
-**方法论**：六步流水线
-
-1. **环境检查** — FFmpeg / Whisper 是否可用，未装则自动安装
-2. **素材扫描** — 获取所有视频文件的分辨率、时长、横竖屏信息
-3. **语音转录** — Whisper small 模型中文转录，带 word timestamps
-4. **内容分析** — 匹配脚本台词、标记气口/口误/重复、确定剪辑方案
-5. **剪辑拼接** — FFmpeg 裁剪 + 拼接，支持横竖屏混合（pillarbox）
-6. **字幕生成与烧录** — SRT 字幕生成（含 ASR 纠错）+ 硬字幕烧录
-
-**调用**：`/video-editor D:\素材目录 3分钟以内 大家好我们是xxx团队...`
-
-**目录结构**：
-
-```
-video-editor/
-├── SKILL.md              主入口（6 步工作流 + 触发词）
-└── scripts/
-    ├── README.md         脚本使用说明
-    ├── transcribe.py     Whisper 转录模板
-    ├── edit_video.py     FFmpeg 剪辑拼接模板
-    ├── generate_srt.py   SRT 字幕生成（含 ASR 纠错）
-    └── burn_subtitles.py 字幕烧录模板
-```
-
-**来源**：2026 年 5 月，南客松 S2 黑客松 RideSafe 团队 demo 视频剪辑中提炼。
-
----
-
 ### /video-presenter — 讲解视频生成器
 
 **用途**：将结构化内容大纲（产品介绍、框架说明、教程等）自动转化为带动画和中文字幕的深色风格讲解视频。无需打开剪辑软件，一条龙生成。
@@ -359,4 +313,14 @@ video-editor/
 
 **前置要求**：Node.js >= 22, FFmpeg, Python 3 + edge-tts, Hyperframes CLI (`npm i -g hyperframes`)
 
-**来源**：2026 年 5 月，从 tob-growth 和 video-editor 两个 skill 的讲解视频制作实践中提炼。
+**来源**：2026 年 5 月，从既有增长框架与视频制作实践中提炼。
+
+## 本轮练习案例
+
+- [Atomic Holiday：无字底图 → 双层标题封面](zombie-scavenger-cover/examples/atomic-holiday/README.md)。包含完整封面、320px 缩略图、布局记录与底图，明确标为本轮演示生成。
+
+## 视频剪辑与方法
+
+完整精剪、转录字幕、39项文字镜头声音方法及节奏检查已归入[真人口播剪辑与发布包](https://github.com/xupengli406-del/edit-talking-head-social-video)；原声MG的节奏检查在其[自身说明](https://github.com/xupengli406-del/produce-voiceover-mg-social-video)内。安装保留的完整Skill即可。
+
+[单双色作品与实体应用练习](mono-color-showcase-pairs/examples/gutou-demo/README.md)。

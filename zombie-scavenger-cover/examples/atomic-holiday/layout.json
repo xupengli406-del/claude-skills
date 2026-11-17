@@ -1,0 +1,60 @@
+{
+  "background": "plate.png",
+  "output": "cover.png",
+  "preview": "thumbnail-320.png",
+  "layout": "standing-poster",
+  "canvas": [
+    1672,
+    940
+  ],
+  "headline": "ATOMIC|HOLIDAY",
+  "headline_lines": [
+    "ATOMIC",
+    "HOLIDAY"
+  ],
+  "subheadline": "",
+  "eyebrow": "",
+  "title_box": [
+    46,
+    131,
+    635,
+    517
+  ],
+  "line_boxes_approx": [
+    [
+      46,
+      131,
+      635,
+      351
+    ],
+    [
+      71,
+      333,
+      577,
+      478
+    ]
+  ],
+  "fonts": [
+    "Impact (macOS system font; not redistributed)",
+    "assets/fonts/Anton-Regular.ttf (already distributed by Skill under OFL)"
+  ],
+  "font_sizes": [
+    221,
+    123
+  ],
+  "palette": {
+    "red": "#952819",
+    "deep_red": "#8E2B22",
+    "cream": "#DFCBAA",
+    "paper": "#C7AE92",
+    "charcoal": "#1D1610"
+  },
+  "stroke_px": 7,
+  "shadow_offset_px": 9,
+  "rotation_degrees_counterclockwise": 2.4,
+  "arc_rise_ratio": 0.072,
+  "foreground_mask": null,
+  "overlap_policy": "no-face-overlap-safe-zone",
+  "wear": 0.0,
+  "seed": 1957
+}
