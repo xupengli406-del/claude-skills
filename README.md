@@ -11,9 +11,23 @@ git clone git@github.com:xupengli406-del/claude-skills.git
 cp -r claude-skills/* ~/.claude/skills/
 ```
 
+## 视频制作从哪里开始
+
+这也是骨头男自己的创作顺序。新手可按顺序认识，制作时根据手头素材和观看重点选择；混合片段共用真实原声时钟，按内容切换画面。
+
+- [01｜文字转动画讲解](video-presenter/README.md)：文字或场景大纲，默认通用合成旁白。
+- [02｜用自己的声音做动画讲解](https://github.com/xupengli406-del/produce-voiceover-mg-social-video)：本人录音或授权音色带动图形与资料讲解。
+- [03｜照片开口：数字人口播](produce-digital-avatar-social-video/README.md)：已授权照片与音频驱动人物口型。
+- [04｜真人随手拍口播](https://github.com/xupengli406-del/edit-talking-head-social-video)：手机随手拍、怼脸观点及以真人表达为主的素材。
+- **05｜电脑讲解与实操教程**
+  - [A｜电脑录屏与资料讲解（杂志风）](edit-screen-tutorial-video/SKILL.md)：真实屏幕、资料、操作入口与鼠标为主。
+  - [B｜画板手绘讲解](https://github.com/xupengli406-del/produce-whiteboard-talking-head-video)：连续画布、真实逐笔、右侧笔记与人物大小切换。
+- [06｜多人访谈主题剪辑](https://github.com/xupengli406-del/edit-multi-person-interview-video)：围绕一个问题整理真实多人发言。
+- [07｜第三方视频创作工具：Hypit](https://github.com/hypit-ai/hypit)：从参考视频或模板开始尝试；由第三方维护，按原项目许可与当前条件使用。
+
 ## Skills 列表
 
-### /produce-digital-avatar-social-video — 数字人口播完整制作
+### /produce-digital-avatar-social-video — 照片开口：数字人口播
 
 **用途**：将授权照片与声音接入数字人口播流程，从自然写稿、MOSS 配音、HeyGen 出镜，到同步字幕、Remotion 连续讲解动画、大标题真人封面和发布包。
 
@@ -288,11 +302,11 @@ xiaohongshu/
 
 ---
 
-### /video-presenter — 讲解视频生成器
+### /video-presenter — 文字转动画讲解
 
-**用途**：将结构化内容大纲（产品介绍、框架说明、教程等）自动转化为带动画和中文字幕的深色风格讲解视频。无需打开剪辑软件，一条龙生成。
+**用途**：把文字或场景大纲做成动画讲解，默认由edge-tts通用中文旁白驱动画面；交付带中文字幕的视频与可编辑HyperFrames工程。
 
-**技术栈**：Hyperframes（HTML 合成 + 逐帧渲染）+ edge-tts（中文 TTS）+ GSAP（入场动画）+ FFmpeg（字幕烧录）
+**技术栈**：Hyperframes（HTML 合成与动态字幕逐帧渲染）+ edge-tts（中文 TTS）+ GSAP（动画）+ FFmpeg（编码与可选普通字幕兼容版）
 
 **方法论**：十步流水线
 
@@ -301,13 +315,13 @@ xiaohongshu/
 3. **获取音频时长** — ffprobe 获取精确时长
 4. **计算时间线** — 场景起止时间、音频偏移、动画入点
 5. **编写 HTML 合成文件** — Hyperframes 合成文件 + CSS 深色高端风格 + GSAP 动画
-6. **Lint 检查** — `hyperframes lint` 确保 0 errors
-7. **渲染视频** — `hyperframes render` 无头 Chrome 逐帧截图 + FFmpeg 编码
-8. **生成 SRT 字幕** — 根据旁白文案和时间线生成 SRT
-9. **烧录字幕** — FFmpeg subtitles filter 白字黑描边
-10. **清理** — 删除中间文件，保留成品视频 + HTML 源文件
+6. **锁定字幕与动态强调** — 按实际音频校对字幕和关键词发声锚点，先接入普通态、关键词放大、邻字让位与句末保持
+7. **Lint 检查** — `hyperframes lint` 确保 0 errors
+8. **渲染视频** — `hyperframes render` 同步渲染画面与动态字幕，再检查实际导出的前三秒及强调前后
+9. **保留字幕侧车** — 交付校对后的 SRT；普通静态烧录仅作明确需要的兼容版本，不能替代动态强调或重复叠字幕
+10. **整理** — 保留成品、SRT、可编辑工程与必要依赖，仅可恢复地收起确认无用的临时文件
 
-**输出**：1920×1080 H.264+AAC 视频，带烧录中文字幕
+**输出**：1920×1080 H.264+AAC 视频，带同步动态中文字幕、SRT 与可编辑工程
 
 **调用**：`/video-presenter ToB增长框架 6个场景 [每场景标题+要点+旁白文案]`
 
@@ -321,6 +335,6 @@ xiaohongshu/
 
 ## 视频剪辑与方法
 
-完整精剪、转录字幕、39项文字镜头声音方法及节奏检查已归入[真人口播剪辑与发布包](https://github.com/xupengli406-del/edit-talking-head-social-video)；原声MG的节奏检查在其[自身说明](https://github.com/xupengli406-del/produce-voiceover-mg-social-video)内。安装保留的完整Skill即可。
+以本人真实表达为主要画面时，使用[真人随手拍口播](https://github.com/xupengli406-del/edit-talking-head-social-video)；以屏幕操作与资料阅读为主时，使用[电脑录屏与资料讲解（杂志风）](edit-screen-tutorial-video/SKILL.md)。原声、字幕、封面和发布质量规范按各自包内的共用模块执行，片内构图由所选流程负责；原声MG的具体制作见其[自身说明](https://github.com/xupengli406-del/produce-voiceover-mg-social-video)。
 
 [单双色作品与实体应用练习](mono-color-showcase-pairs/examples/gutou-demo/README.md)。

@@ -1,21 +1,21 @@
 ---
 name: video-presenter
-description: >-
-  讲解视频生成器：基于 Hyperframes + edge-tts 自动生成带动画和字幕的深色风格讲解视频。
-  输入内容大纲（标题+要点+旁白文案），自动完成 TTS 语音合成、HTML 合成文件编写、
-  GSAP 入场动画、Hyperframes 逐帧渲染、SRT 字幕生成与烧录。
-  当用户需要为 skill/产品/框架/教程制作讲解视频时使用。
+description: "把一段文字或场景大纲做成动画讲解：编排标题、要点与旁白，默认用edge-tts通用合成语音，使用HyperFrames逐帧渲染并制作中文字幕。适用于产品、框架或教程的文字转动画；需要本人声音时选原声MG，照片人物出镜时选数字人口播。"
 argument-hint: "[主题名称] [场景数] [每场景：标题+要点+旁白文案]"
 user-invocable: true
 ---
 
-# 讲解视频生成器
+# 文字转动画讲解
 
 你是一个专业的讲解视频制作助手。将用户提供的内容大纲（结构化知识、产品介绍、框架说明等）自动转化为带动画效果和中文字幕的深色风格讲解视频。
 
 ## 按成片选择流程
 
-本包将场景大纲、标题要点与旁白文案编排成动画讲解，当前模板默认 edge-tts 中文语音；没有内置本人授权音色服务。与原声 MG、大纲动画的输入、声音和画面差异见[三种视频流程怎么选](references/video-workflow-selection.md)。先按画面选择，声音可以单独安排。
+本包将场景大纲、标题要点与旁白文案编排成动画讲解，当前模板默认 edge-tts 中文语音；没有内置本人授权音色服务。与原声 MG、大纲动画的输入、声音和画面差异见[视频制作怎么选](references/video-workflow-selection.md)。先按画面选择，声音可以单独安排。
+
+## 制作时的共用质量规范
+
+新片和完整重剪先按包内[真实钩子](shared-video/references/opening-and-retention.md)确定前三秒的观看理由；字幕按[关键词放大与验收](shared-video/references/subtitles-and-motion.md)落实整句普通态、发声锚点放大、邻字让位与句末保持。下方普通SRT烧录是基础示例，正式工程仍需实现动态强调并检查实际导出。
 
 ## 技术栈
 
@@ -310,32 +310,15 @@ window.__timelines["composition-id"] = tl;
 - 不同场景的要点使用不同 ease（power3.out / power2.out / expo.out 交替）
 - 最后一幕在音频结束前 1.5s 开始淡出
 
-### Step 6: Lint 检查
+### Step 6: 字幕时码与动态强调
 
-```bash
-cd <project-dir>
-hyperframes lint
-```
+先从锁定旁白取得实际句词时间锚点，生成交付用SRT，再把动态字幕放进同一HTML合成。可使用实际可用的TTS时间事件、ASR或forced alignment，并核对原声；下方按字符均分的代码只示范SRT格式，不能用它推断关键词发声时刻。
 
-确保 0 errors, 0 warnings。常见问题：
-- `template_literal_selector` → 把 `${var}` 替换为硬编码字符串
-- `composition_self_attribute_selector` → 用 `#id` 替代 `[data-composition-id="..."]`
+浏览器DOM工程可使用包内`shared-video/assets/inline-emphasis.mjs`的`createInlineEmphasis(root, config)`：等待`document.fonts.ready`后测字，配置真实`captionStart`、`captionEnd`、`anchorTime`及文本段，初始化一次；在本工程每次逐帧求值或seek时显式调用返回对象的`render(t)`，t取同一绝对音频时钟。它是单行示例，实际安全区、字号和多行布局需按本期工程适配。不能只初始化DOM或靠墙钟播放来声称随机跳转与分段渲染一致。
 
-### Step 7: 渲染视频
+整句先普通态显示，到实际关键词发声点再放大并让邻字按当前宽度平滑让位，完成态保持至整条退出；下一条重新普通态。逐项验收见[包内字幕规范](shared-video/references/subtitles-and-motion.md)。下面的SRT作为侧车交付，与同一最终时钟对应。
 
-```bash
-hyperframes render --output output.mp4 --quality standard
-```
-
-渲染参数：
-- `--quality draft` 快速迭代
-- `--quality standard` 正式输出（默认）
-- `--quality high` 最终交付
-- `--fps 30` 默认帧率
-
-### Step 8: 生成字幕 SRT
-
-根据音频时间线和旁白文案生成 SRT 文件：
+基础SRT写入格式示例：
 
 ```python
 def format_time(s):
@@ -364,7 +347,34 @@ def gen_srt(scenes_timing, output_path, chars_per_line=20):
                 idx += 1
 ```
 
-### Step 9: 烧录字幕
+### Step 7: Lint 检查
+
+```bash
+cd <project-dir>
+hyperframes lint
+```
+
+确保 0 errors, 0 warnings。常见问题：
+- `template_literal_selector` → 把 `${var}` 替换为硬编码字符串
+- `composition_self_attribute_selector` → 用 `#id` 替代 `[data-composition-id="..."]`
+
+### Step 8: 渲染视频
+
+动态字幕、场景动画和音频均接入同一工程后，按同一绝对时间逐帧渲染：
+
+```bash
+hyperframes render --output output.mp4 --quality standard
+```
+
+渲染参数：
+- `--quality draft` 快速迭代
+- `--quality standard` 正式输出（默认）
+- `--quality high` 最终交付
+- `--fps 30` 默认帧率
+
+### Step 9: 兼容普通SRT烧录示例
+
+正式成片优先使用步骤6接入的动态字幕。下面命令仅用于明确需要普通静态字幕的兼容输出；它本身没有V24关键词放大，不能作为完整字幕制作的默认终点。已有动态字幕画面时不再叠烧同一份普通字幕。
 
 ```bash
 ffmpeg -y -i output.mp4 \
